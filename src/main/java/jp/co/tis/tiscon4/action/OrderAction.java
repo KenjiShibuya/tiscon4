@@ -73,6 +73,41 @@ public class OrderAction {
     }
 
     /**
+     * 新規登録登録画面を表示する。
+     *
+     * @param req リクエストコンテキスト
+     * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
+     * @return HTTPレスポンス
+     */
+    @InjectForm(form = AcceptForm.class)
+    public HttpResponse inputNewUser(HttpRequest req, ExecutionContext ctx) {
+        ctx.setRequestScopedVar("form", new UserForm());
+        ctx.setRequestScopedVar("genderTypes", GenderType.values());
+        ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
+        ctx.setRequestScopedVar("jobTypes", JobType.values());
+        ctx.setRequestScopedVar("treatedTypes", TreatedType.values());
+
+        return new HttpResponse("newuser.html");
+    }
+    /**
+     * ログイン登録画面を表示する。
+     *
+     * @param req リクエストコンテキスト
+     * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
+     * @return HTTPレスポンス
+     */
+    @InjectForm(form = AcceptForm.class)
+    public HttpResponse inputLogin(HttpRequest req, ExecutionContext ctx) {
+        ctx.setRequestScopedVar("form", new UserForm());
+        ctx.setRequestScopedVar("genderTypes", GenderType.values());
+        ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
+        ctx.setRequestScopedVar("jobTypes", JobType.values());
+        ctx.setRequestScopedVar("treatedTypes", TreatedType.values());
+
+        return new HttpResponse("login.html");
+    }
+
+    /**
      * お勤め先登録画面を表示する。
      *
      * @param req リクエストコンテキスト
