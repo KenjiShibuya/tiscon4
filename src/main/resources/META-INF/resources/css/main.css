@@ -128,13 +128,22 @@ ul.label {
     display: flex;
 }
 
+.index-block2{
+    margin-left: auto;
+    width: 200px;
+    heigh: 500px;
+    justify-content:space-around;
+    display: flex;
+}
+
+
 .index-icon {
     padding:0.5em 1em;
     margin:2em 0;
     font-weight:bold;
     background:#FFF;     /**#FFF*/
     border-radius:10px;
-    width: 250px;
+    width: 200px;
     height: 300px;
 }
 
@@ -157,7 +166,7 @@ ul.label {
 
 index-button1 {
     display: inline-block;
-    margin: 0 .25em 0 0;
+    margin-left: auto;
     padding: .78571429em 1.5em;
     line-height: 1em;
     border-radius: .18571429rem;
