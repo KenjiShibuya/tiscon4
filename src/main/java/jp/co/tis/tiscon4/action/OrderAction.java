@@ -80,6 +80,11 @@ public class OrderAction {
      * @return HTTPレスポンス
      */
     public HttpResponse inputNewUser(HttpRequest req, ExecutionContext ctx) {
+        InsuranceOrder insOrder = new InsuranceOrder();
+
+        SessionUtil.delete(ctx, "insOrder");
+        SessionUtil.put(ctx, "insOrder", insOrder);
+
         ctx.setRequestScopedVar("form", new UserForm());
         ctx.setRequestScopedVar("genderTypes", GenderType.values());
         ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
@@ -96,6 +101,11 @@ public class OrderAction {
      * @return HTTPレスポンス
      */
     public HttpResponse inputLogin(HttpRequest req, ExecutionContext ctx) {
+        InsuranceOrder insOrder = new InsuranceOrder();
+
+        SessionUtil.delete(ctx, "insOrder");
+        SessionUtil.put(ctx, "insOrder", insOrder);
+
         ctx.setRequestScopedVar("form", new UserForm());
         ctx.setRequestScopedVar("genderTypes", GenderType.values());
         ctx.setRequestScopedVar("marriedTypes", MarriedType.values());
@@ -105,6 +115,16 @@ public class OrderAction {
         return new HttpResponse("login.html");
     }
 
+    /**
+     * パスワード登録画面を表示する。
+     *
+     * @param req リクエストコンテキスト
+     * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
+     * @return HTTPレスポンス
+     */
+    public HttpResponse pass(HttpRequest req, ExecutionContext ctx) {
+        return new HttpResponse("pass.html");
+    }
     /**
      * お勤め先登録画面を表示する。
      *
@@ -134,7 +154,24 @@ public class OrderAction {
 
         return new HttpResponse("job.html");
     }
+    /**
+     * ユーザーページを表示する。
+     *
+     * @param req リクエストコンテキスト
+     * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
+     * @return HTTPレスポンス
+     */
+//    @InjectForm(form = UserForm.class)
+    public HttpResponse customer(HttpRequest req, ExecutionContext ctx) {
+//        UserForm form = ctx.getRequestScopedVar("form");
+        UserForm form = new UserForm();
+        form.setKanjiName("TIS 太郎");
+        InsuranceOrder insOrder = SessionUtil.get(ctx, "insOrder");
 
+        BeanUtil.copy(form, insOrder);
+
+        return new HttpResponse("index2.html");
+    }
     /**
      * 本人登録画面に入力エラーがあった時に再表示する。
      *

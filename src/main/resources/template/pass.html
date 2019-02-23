@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>ログイン</title>
+    <title>パスワード</title>
 
     <link rel="stylesheet" th:href="@{http://fonts.googleapis.com/css?family=Exo:900}"/>
     <link rel="stylesheet"
@@ -17,11 +17,11 @@
         <div class="ui information container">
             <div class="ui middle center aligned grid ">
                 <div class="user-block">
-                    <h1 class="ui aligned header teal">Tis Insuranceにログインする</h1>
+                    <h1 class="ui aligned header teal">ログインパスワードを設定する</h1>
 
                     <form class="ui form" method="post" action="/action/order/customer">
 
-                        <div class="ui horizontal divider">ログイン情報</div>
+                        <div class="ui horizontal divider">パスワード設定</div>
 
                         <div class="ui statement">※「＊」は入力必須項目です。</div>
 
@@ -30,21 +30,19 @@
 
                             <tr>
                                 <td>
-                                    <label>メールアドレス（半角）</label>
+                                    <label>パスワード</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
-                                    <div class="field" th:classappend="${errors.hasError('emailAddress')} ? 'error'">
-                                        <input type="text" name="emailAddress" th:value="${form.emailAddress}"/>
-                                        <p th:if="${errors.hasError('emailAddress')}"
-                                           th:text="${errors.getMessage('emailAddress')}" class="error-message">
-                                        </p>
+                                    <div class="field">
+                                        <input type="text" name="password" value=""/>
+
                                     </div>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <label>パスワード</label>
+                                    <label>パスワード(確認のため再度入力してください)</label>
                                     <p style="color:red;">＊</p>
                                 </td>
                                 <td>
@@ -58,14 +56,9 @@
                         </table>
 
                         <div class="ui column grid">
-                            <div class="eight wide column left aligned">
-                                <!--/*戻る場合、formの送り先を強制的に書き換える*/-->
-                                <button class="ui button angle left icon"
-                                        onclick="form.action='/action/order/backToAccept';return true">戻る
-                                </button>
-                            </div>
+
                             <div class="eight wide column right aligned">
-                                <button class="ui teal button angle right icon">ログインする</button>
+                                <button class="ui teal button angle right icon">ログインする(完了)</button>
                             </div>
                         </div>
                     </form>
