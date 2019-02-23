@@ -138,9 +138,9 @@ ul.label {
 
 .index-block2{
 
-    margin-left: auto;
-    width: 600px;
-    heigh: 110px;
+    margin: 0 auto;
+    width: 800px;
+    heigh: 150px;
     justify-content:space-around;
     display: flex;
 }
@@ -163,7 +163,7 @@ ul.label {
     background:#FFF;     /**#FFF*/
     border-radius:10px;
     width: 250px;
-    height: 110px;
+    height: 150px;
 }
 
 .index-text{
