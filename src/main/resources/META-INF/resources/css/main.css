@@ -10,6 +10,14 @@ body {
     padding-top: 80px;
 }
 
+h1.progress{
+    color:white;
+    text-align: center;
+        background-color: rgb(68, 84, 106);
+        border-radius: .28571429rem;
+        padding: 30pt;
+}
+
 a.logo {
     font-family: 'Exo', sans-serif;
     color: #f33;
@@ -196,4 +204,3 @@ index-button1 {
 td {
     width: 400px;
 }
-
