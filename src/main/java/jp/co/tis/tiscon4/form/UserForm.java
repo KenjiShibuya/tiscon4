@@ -63,6 +63,11 @@ public class UserForm implements Serializable {
     @Domain("emailAddress")
     private String emailAddress;
 
+    /** パスワード */
+    @Required
+    @Domain("password")
+    private String password;
+
     /** 配偶者有無 */
     @Required
     @Domain("married")
@@ -169,6 +174,12 @@ public class UserForm implements Serializable {
 
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
+    }
+
+    public String getPassWord() { return password; }
+
+    public void setPassWord(String paswprd) {
+        this.password = password;
     }
 
     public String getMarried() {

@@ -18,6 +18,7 @@ public class IndexAction {
      * @param ctx HTTPリクエストの処理に関連するサーバ側の情報
      * @return HTTPレスポンス
      */
+
     public HttpResponse index(HttpRequest req, ExecutionContext ctx) {
         return new HttpResponse("index.html");
     }
