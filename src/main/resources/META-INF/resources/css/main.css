@@ -137,9 +137,10 @@ ul.label {
 }
 
 .index-block2{
+
     margin-left: auto;
-    width: 200px;
-    heigh: 500px;
+    width: 600px;
+    heigh: 110px;
     justify-content:space-around;
     display: flex;
 }
@@ -151,8 +152,18 @@ ul.label {
     font-weight:bold;
     background:#FFF;     /**#FFF*/
     border-radius:10px;
-    width: 200px;
+    width: 250px;
     height: 300px;
+}
+
+.index-icon2 {
+    padding:0.5em 1em;
+    margin:2em 0;
+    font-weight:bold;
+    background:#FFF;     /**#FFF*/
+    border-radius:10px;
+    width: 250px;
+    height: 110px;
 }
 
 .index-text{
